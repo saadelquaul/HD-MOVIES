@@ -44,7 +44,6 @@ const GENRE_MAP: Record<number, string> = {
 async function fetchJSON<T>(url: string): Promise<T> {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`TMDb API error: ${res.status}`);
-    console.log(res.json().then((data) => console.log(data)));
     return res.json() as Promise<T>;
 }
 
